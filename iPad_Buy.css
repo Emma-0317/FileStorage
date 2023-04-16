@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0;
     padding: 0;
 }
@@ -28,7 +28,7 @@ nav {
 }
 
 nav h1 {
-    margin-top: 15%;
+    margin-top: 8%;
     font-size: 40px;
     font-weight: 600;
     font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -40,7 +40,7 @@ nav p {
 }
 
 nav .word {
-    margin-top: 3%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -66,7 +66,7 @@ nav span:nth-child(2) {
 
 section {
     display: flex;
-    margin-top: 3%;
+    margin-top: 2%;
     justify-content: center;
     align-items: center;
 }
@@ -76,7 +76,7 @@ select {
     flex-direction: column;
     width: 150px;
     height: 25px;
-    margin-left: 8%;
+    margin-left: 15%;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -87,13 +87,13 @@ option{
 
 label{
     width: 250px;
-    height: 25px;
-    margin-left: 6%;
+    height: 20px;
+    margin-left: 15%;
 }
 
 .price{
     display: flex;
-    margin: 10%;
+    margin: 20%;
 }
 
 .price p{
@@ -103,4 +103,8 @@ label{
 
 .text{
     margin-top: 4%;
+}
+
+picture img{
+    border-radius: 20px;
 }
