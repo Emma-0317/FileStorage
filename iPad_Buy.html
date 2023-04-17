@@ -118,36 +118,51 @@
             })
             .catch(error => console.error('Error:', error));
 
-        // color下拉式選單
-        colorSelect.addEventListener("change", ()=> {
-            let Color = colorSelect.value;
-            let filteredProduct = ipadArray.filter(function (ipad) {
-                return ipad.color == Color;
+            //下拉式選單
+        let selectArray = [colorSelect, storageSelect, networkSelect];
+
+        selectArray.forEach(select => {
+            select.addEventListener("change", () => {
+                let Color = colorSelect.value;
+                let Storage = storageSelect.value;
+                let Network = networkSelect.value;
+                let filteredProduct = ipadArray.filter(ipad =>
+                    ipad.color == Color && ipad.storage == Storage && ipad.network == Network);
+                    productImg.src = filteredProduct[0].picture;//圖片選取
+                document.querySelector("#pricenumber").textContent = filteredProduct[0].price;//價錢選取
             });
-            productImg.src = filteredProduct[0].picture;
-            document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
         });
 
-        //storage下拉式選單
-        storageSelect.addEventListener("change", ()=> {
-            let Color = colorSelect.value;
-            let Storage = storageSelect.value;
-            let filteredProduct = ipadArray.filter(function (ipad) {
-                return ipad.color == Color && ipad.storage == Storage;
-            });
-            document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
-        });
+        // // color下拉式選單
+        // colorSelect.addEventListener("change", ()=> {
+        //     let Color = colorSelect.value;
+        //     let filteredProduct = ipadArray.filter(function (ipad) {
+        //         return ipad.color == Color;
+        //     });
+        //     productImg.src = filteredProduct[0].picture;
+        //     document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
+        // });
 
-        //network下拉式選單
-        networkSelect.addEventListener("change", ()=> {
-            let Color = colorSelect.value;
-            let Storage = storageSelect.value;
-            let Network = networkSelect.value;
-            let filteredProduct = ipadArray.filter(function (ipad) {
-                return ipad.color == Color && ipad.storage == Storage && ipad.network == Network;
-            });
-            document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
-        });
+        // //storage下拉式選單
+        // storageSelect.addEventListener("change", ()=> {
+        //     let Color = colorSelect.value;
+        //     let Storage = storageSelect.value;
+        //     let filteredProduct = ipadArray.filter(function (ipad) {
+        //         return ipad.color == Color && ipad.storage == Storage;
+        //     });
+        //     document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
+        // });
+
+        // //network下拉式選單
+        // networkSelect.addEventListener("change", ()=> {
+        //     let Color = colorSelect.value;
+        //     let Storage = storageSelect.value;
+        //     let Network = networkSelect.value;
+        //     let filteredProduct = ipadArray.filter(function (ipad) {
+        //         return ipad.color == Color && ipad.storage == Storage && ipad.network == Network;
+        //     });
+        //     document.querySelector("#pricenumber").textContent = filteredProduct[0].price;
+        // });
 
     </script>
 </body>
